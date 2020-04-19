@@ -128,9 +128,9 @@ void Stop(short usSpeed)
 {
   Serial.println("Stop");
   usMotor_Status = BRAKE;
-  motorGo(MOTOR_1, usMotor_Status, usSpeed*0.50);
-  motorGo(MOTOR_2, usMotor_Status,  usSpeed*0.50);
-  delay(30);
+  //motorGo(MOTOR_1, usMotor_Status, usSpeed*0.50);
+  //motorGo(MOTOR_2, usMotor_Status,  usSpeed*0.50);
+  //delay(30);
   motorGo(MOTOR_1, usMotor_Status, usSpeed*0.25);
   motorGo(MOTOR_2, usMotor_Status,  usSpeed*0.25);
   delay(30);
