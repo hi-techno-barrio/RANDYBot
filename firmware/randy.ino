@@ -185,42 +185,46 @@ void Right(short usSpeed)
 
 void motorGo(uint8_t motor, uint8_t direct, uint8_t pwm)         //Function that controls the variables: motor(0 ou 1), direction (cw ou ccw) e pwm (entra 0 e 255);
 {
-  if(motor == MOTOR_1)
+  switch (motor)
   {
-    if(direct == CW)
-    {
-      digitalWrite(MOTOR_A1_PIN, LOW); 
-    }
-    else if(direct == CCW)
-    {
-      digitalWrite(MOTOR_A1_PIN, HIGH);
-    }
-    
-   /* else
-    {
-      digitalWrite(MOTOR_A1_PIN, LOW);
-    }
-    */
- analogWrite(PWM_MOTOR_1, pwm);    
-  }
-  else if(motor == MOTOR_2)
-  {
-    if(direct == CW)
-    //  same motor connection bu different directions
-    {
-      digitalWrite(MOTOR_A2_PIN, HIGH);
-    }
-    else if(direct == CCW)
-    {
-      digitalWrite(MOTOR_A2_PIN, LOW);
-    }
-    /*else
-    {
-      digitalWrite(MOTOR_A2_PIN, LOW);
-    }
-    */
-    analogWrite(PWM_MOTOR_2, pwm);
-  }
+    case  MOTOR_1 :
+            if(direct == CW)
+            {
+              digitalWrite(MOTOR_A1_PIN, LOW); 
+              digitalWrite(MOTOR_B1_PIN, HIGH);
+            }
+            else if(direct == CCW)
+            {
+              digitalWrite(MOTOR_A1_PIN, HIGH);
+              digitalWrite(MOTOR_B1_PIN, LOW);      
+            }else 
+            if (direct == BRAKES)
+            {
+            digitalWrite(MOTOR_A1_PIN, LOW);
+            digitalWrite(MOTOR_B1_PIN, LOW);
+            }
+            analogWrite(PWM_MOTOR_1, pwm); 
+    break;
+
+    case MOTOR_2 :
+           if(direct == CW)
+            {
+              digitalWrite(MOTOR_A2_PIN, LOW); 
+              digitalWrite(MOTOR_B2_PIN, HIGH);
+            }
+            else if(direct == CCW)
+            {
+              digitalWrite(MOTOR_A2_PIN, HIGH);
+              digitalWrite(MOTOR_B2_PIN, LOW);      
+            }else 
+            if (direct == BRAKES)
+            {
+            digitalWrite(MOTOR_A2_PIN, LOW);
+            digitalWrite(MOTOR_B2_PIN, LOW);
+            }
+            analogWrite(PWM_MOTOR_2, pwm); 
+    break;
+  } // switches
 }
 // indicator
 void indicator()
