@@ -25,8 +25,12 @@ To embed ZOOM video conferencing in your Web html GUI
    example:
   <iframe src="https://zoom.us/wc/{{ meetindID }}/join?prefer=1&un=TWluZGF1Z2Fz" sandbox="allow-forms allow-scripts" allow="microphone; camera; fullscreen"></iframe> 
   
- To embed team viewer in your Web html GUI 
+  
+ To embed teamviewer in your Web html GUI 
  1) Create frame
  2) Copy and paste your teamviewer url
  example:
  <iframe src= href="https://start.teamviewer.com/012345678">Connect to device 012345678"</iframe> 
+ 
+ [References] 
+  Teamviewer: https://community.teamviewer.com/t5/Knowledge-Base/How-can-I-link-to-TeamViewer-from-my-website/ta-p/38
