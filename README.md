@@ -17,3 +17,12 @@ Single Board Computer + Arduino
 5) browse localhost:4050
 6) then test 
 7)  See for some tutorials.
+
+
+To embed ZOOM video conferencing in your Web html GUI
+1) Create frame 
+2) Copy and paste your Zoom url 
+   ex:
+  " <iframe src="https://zoom.us/wc/{{ meetindID }}/join?prefer=1&un=TWluZGF1Z2Fz" sandbox="allow-forms allow-scripts" allow="microphone; camera; fullscreen"></iframe> "
+  
+ To embed team viewer in your Web html GUI 
